@@ -2,19 +2,13 @@ package com.mozl.camera2.settings;
 
 import androidx.annotation.NonNull;
 /**
- * Immutable class for describing width and height dimensions in pixels.
+ * 描述以像素为单位的宽度和高度尺寸的类
  */
 public class Size implements Comparable<Size> {
 
     private final int mWidth;
     private final int mHeight;
 
-    /**
-     * Create a new immutable Size instance.
-     *
-     * @param width  The width of the size, in pixels
-     * @param height The height of the size, in pixels
-     */
     public Size(int width, int height) {
         mWidth = width;
         mHeight = height;
@@ -50,7 +44,6 @@ public class Size implements Comparable<Size> {
 
     @Override
     public int hashCode() {
-        // assuming most sizes are <2^16, doing a rotate will give us perfect hashing
         return mHeight ^ ((mWidth << (Integer.SIZE / 2)) | (mWidth >>> (Integer.SIZE / 2)));
     }
 
