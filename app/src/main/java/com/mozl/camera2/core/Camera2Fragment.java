@@ -76,7 +76,7 @@ import java.util.SortedSet;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-public class Camera2Fragment extends Fragment { // Removed FragmentCompat.OnRequestPermissionsResultCallback
+public class Camera2Fragment extends Fragment {
 
     private static final int SENSOR_ORIENTATION_DEFAULT_DEGREES = 90;
     private static final int SENSOR_ORIENTATION_INVERSE_DEGREES = 270;
@@ -310,14 +310,14 @@ public class Camera2Fragment extends Fragment { // Removed FragmentCompat.OnRequ
         void onPhotoTaken(String photoPath);
     }
 
-    public void setThumbnailCallbackListener(ThumbnailCallback listener) { // 新增：设置回调监听
+    public void setThumbnailCallbackListener(ThumbnailCallback listener) {
         this.mThumbnailCallbackListener = listener;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mMainHandler = new Handler(Looper.getMainLooper()); // 新增：初始化Handler
+        mMainHandler = new Handler(Looper.getMainLooper());
     }
 
 
